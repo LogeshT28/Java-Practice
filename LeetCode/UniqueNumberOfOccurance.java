@@ -1,4 +1,3 @@
-package LeetCode;
 
 // Unique Number of Occurrences
 // Given an array of integers arr, return true if the number of occurrences of each value in the array is unique or false otherwis
@@ -22,12 +21,12 @@ import java.util.Scanner;
 public class UniqueNumberOfOccurance {
     public static boolean uniqueOccurrences(int[] arr) {
         Map<Integer, Integer> map = new HashMap<>();
-        
+
         // Count the occurrences of each value in the array
         for (int i = 0; i < arr.length; i++) {
             map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
-        
+
         // Use a set to check for unique occurrences
         Set<Integer> s = new HashSet<>();
         for (int num : map.values()) {
@@ -35,25 +34,26 @@ public class UniqueNumberOfOccurance {
                 return false; // If add returns false, it means the count is not unique
             }
         }
-        
+
         return true; // All occurrences are unique
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
+
         System.out.println("Enter the number of elements in the array:");
         int n = scanner.nextInt();
-        
+
         int[] arr = new int[n];
         System.out.println("Enter the elements of the array:");
         for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
         }
-        
+
         boolean result = uniqueOccurrences(arr);
-        
+
         System.out.println("The result is: " + result);
-        
+
         scanner.close();
     }
 }
