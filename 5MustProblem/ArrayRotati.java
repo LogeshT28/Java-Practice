@@ -1,4 +1,4 @@
-public class ArrayRotation {
+public class ArrayRotati{
 
     public static void RotateArray(int arr[], int k) {
         int n = arr.length;
