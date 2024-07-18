@@ -7,7 +7,7 @@ import java.io.IOException;
 public class FileReaderExample {
 
     public static void main(String[] args) {
-        String filePath = "\"C:\\Users\\loges\\OneDrive\\Desktop\\Test.txt\""; // Specify the path to your file
+        String filePath = "G:\\10Days Chellange\\Tasks\\Test.txt"; // Specify the path to your file
         StringBuilder fileContent = new StringBuilder();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
@@ -23,4 +23,3 @@ public class FileReaderExample {
         System.out.println(fileContent.toString());
     }
 }
-
