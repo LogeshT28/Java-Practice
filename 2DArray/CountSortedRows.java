@@ -2,16 +2,16 @@ import java.util.Scanner;
 
 public class CountSortedRows {
     public static boolean isSorted(int a[]){
-        int column = a.length;
+        int n = a.length;
         boolean ase= true;
         boolean des = true;
-        for(int i=0;i<column-1;i++){
+        for(int i=0;i<n-1;i++){
             if(a[i] > a[i+1]){
                 ase = false;
             }
             if(a[i] < a[i+1]){
                 des = false;
-            }
+            } 
 
         }
 
