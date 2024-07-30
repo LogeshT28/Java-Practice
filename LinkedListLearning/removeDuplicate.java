@@ -1,6 +1,7 @@
 package LinkedListLearning;
-
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Scanner;
 
 class Node {
@@ -81,6 +82,33 @@ public class removeDuplicate {
             temp = temp.next;
         }
     }
+    void removeAllDuplicates() {
+        if (head == null) {
+            System.out.println("Linked List is Empty");
+            return;
+        }
+
+        // First pass: count occurrences of each value
+        Map<Integer, Integer> countMap = new HashMap<>();
+        Node temp = head;
+        while (temp != null) {
+            countMap.put(temp.data, countMap.getOrDefault(temp.data, 0) + 1);
+            temp = temp.next;
+        }
+
+        // Second pass: create new list with only unique elements
+        Node dummy = new Node(0); // dummy node to simplify handling of the head
+        Node newList = dummy;
+        temp = head;
+        while (temp != null) {
+            if (countMap.get(temp.data) == 1) {
+                newList.next = new Node(temp.data);
+                newList = newList.next;
+            }
+            temp = temp.next;
+        }
+        head = dummy.next; // update head to the new list
+    }
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
@@ -91,7 +119,8 @@ public class removeDuplicate {
             System.out.println("2: Display List");
             System.out.println("3: Remove Duplicates");
             System.out.println("4:Remove not Consicutive Elements");
-            System.out.println("5: Exit");
+            System.out.println("5:To Remove Duplicate ");
+            System.out.println("6: Exit");
             System.out.print("Enter your choice: ");
             int choice = s.nextInt();
             
@@ -111,6 +140,9 @@ public class removeDuplicate {
                     list.removeNotConsicuitiveElement();
                     break;
                 case 5:
+                    list.removeAllDuplicates();
+                    break;
+                case 6:
                     System.exit(0);
                     break;
                 default:
