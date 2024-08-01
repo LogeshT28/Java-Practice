@@ -45,7 +45,7 @@ class MiddleLinkedList{
     void FindMiddleNode(){
         if (head == null) {
             System.out.println("The list is empty.");
-            return;
+            return; 
         }
         Node slow = head;
         Node fast = head;
@@ -60,6 +60,29 @@ class MiddleLinkedList{
         //System.out.println("The middle node is: " + slow.data);
     }
 
+    void middleNode(){
+        if (head == null) {
+            System.out.println("The list is empty.");
+            return;
+        }
+        Node temp = head;
+        int count=0;
+        while (temp!=null) {
+            temp = temp.next;
+            count++;
+        }
+        temp=head;
+        int res= count/2;
+        while(res > 0){
+            temp = temp.next;
+            res--;
+        }
+        while(temp!=null){
+            System.out.println("The middle node is: " + temp.data);
+            temp=temp.next;
+        }
+    }
+
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 
@@ -68,7 +91,8 @@ class MiddleLinkedList{
             System.out.println("1: Insert Data");
             System.out.println("2: Display List");
             System.out.println("3:To show Middile Node ");
-            System.out.println("4: Exit");
+            System.out.println("4 :to Achieve Another Aproch");
+            System.out.println("5: Exit");
             int choice = s.nextInt();
             
             switch (choice) {
@@ -84,8 +108,12 @@ class MiddleLinkedList{
                     list.FindMiddleNode();
                     break;
                 case 4:
+                    list.middleNode();
+                    break;
+                case 5:
                     System.exit(0);
                     break;
+                
                 default:
                     System.out.println("Invalid choice, please try again.");
                     break;
