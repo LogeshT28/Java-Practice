@@ -79,8 +79,5 @@ public class LinkedListInsert {
 
     }
 
-public void removeDup() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'removeDup'");
-}
+
 }
