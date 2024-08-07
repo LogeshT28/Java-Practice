@@ -11,7 +11,7 @@ class Node{
     }
 }
 public class LinkedListInsert {
-    Node head;
+        Node head;
         LinkedListInsert() {
             this.head=null;
         }
@@ -27,6 +27,8 @@ public class LinkedListInsert {
                 temp=temp.next;
             }
             temp.next=newnode;
+            // newnode.next = head;
+            // head = newnode;
         }
     }
 
@@ -65,7 +67,6 @@ public class LinkedListInsert {
                 case 2:
                     list.display();
                     break;
-
                 case 3:
                     System.exit(0);
                     break;

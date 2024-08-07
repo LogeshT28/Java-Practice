@@ -28,7 +28,7 @@ public class BinaryTreeInsertion {
             root.right = insertTree(root.right, data);
         }
         return root;
-    }
+    } 
     public void inOrderTraversal(Node root) {
         if (root != null) {
             inOrderTraversal(root.left);
@@ -69,4 +69,4 @@ public class BinaryTreeInsertion {
         tree.postOrderTraversal(tree.root);
         System.out.println();
     }
-}
+\+}

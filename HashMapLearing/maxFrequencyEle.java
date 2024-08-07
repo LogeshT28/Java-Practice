@@ -24,6 +24,11 @@ import java.util.HashMap;
 public class maxFrequencyEle {
     public static void printingHashMap(String[] nums){
         HashMap<String,Integer> map = new HashMap<>();
+        // for(String i:nums){
+        //     if(map.containsKey(i)){
+
+        //     }
+        // }
         for(String i:nums){
             map.put(i,map.getOrDefault(i, 0)+1);
         }
