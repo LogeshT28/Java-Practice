@@ -29,7 +29,7 @@ public class maxFrequencyEle {
 
         //     }
         // }
-        for(String i:nums){
+         for(String i:nums){
             map.put(i,map.getOrDefault(i, 0)+1);
         }
         // for (String i : nums) {
@@ -37,7 +37,7 @@ public class maxFrequencyEle {
         // }
         for(HashMap.Entry<String,Integer> entry:map.entrySet()){
             System.out.println("Element: " + entry.getKey() + ", Frequency: " + entry.getValue());
-
+ 
         }
     }
     public static int maxFrequencyElements(int[] nums) {

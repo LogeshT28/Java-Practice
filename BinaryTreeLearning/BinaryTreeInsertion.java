@@ -33,12 +33,12 @@ public class BinaryTreeInsertion {
         if (root != null) {
             inOrderTraversal(root.left);
             System.out.print(root.data + " ");
-            inOrderTraversal(root.right);
+            inOrderTraversal(root.right); 
         }
     }
     public void preOrderTraversal(Node root){
         if(root !=null){
-            System.out.print(root.data+" ");
+            System.out.print(root.data+" ");//RC
             preOrderTraversal(root.left);
             preOrderTraversal(root.right);
         }
@@ -50,6 +50,7 @@ public class BinaryTreeInsertion {
             System.out.print(root.data+" ");
         }
     }
+
     public static void main(String[] args) {
         BinaryTreeInsertion tree = new BinaryTreeInsertion();
         tree.root = tree.insertTree(tree.root, 8);
@@ -59,7 +60,7 @@ public class BinaryTreeInsertion {
         tree.root = tree.insertTree(tree.root, 2);
         tree.root = tree.insertTree(tree.root, 5);
 
-        System.out.print("In-order Traversal: ");
+        System.out.print("In-order Traversal: ");   
         tree.inOrderTraversal(tree.root);
         System.out.println();
         System.out.print("Pre-order Traversal: ");
@@ -69,4 +70,4 @@ public class BinaryTreeInsertion {
         tree.postOrderTraversal(tree.root);
         System.out.println();
     }
-\+}
+}
