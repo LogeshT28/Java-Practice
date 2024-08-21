@@ -12,55 +12,47 @@
 // Input: nums = [1,2,3], k = 3
 // Output: 2
 
-import java.util.HashMap;
 
 public class SubArrayEqualsWithK {
 
     public static int subarraySum(int[] nums, int k) {
-        //int sum=0;
-        int count=0;
-        for(int i=0;i<nums.length;i++){
-            int sum=0;
-            for(int j=i;j<nums.length;j++){
-                sum +=nums[j];
-                if(sum==k){
+        int count = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            int sum = 0;
+
+            for (int j = i; j < nums.length; j++) {
+                sum += nums[j];
+
+                if (sum == k) {
                     count++;
                 }
             }
         }
+
         return count;
     }
 
-//optimized code ;
-    // HashMap<Integer, Integer> map = new HashMap<>();
-    //     int sum = 0; // Initialize the cumulative sum
-    //     int count = 0; // Initialize the count of subarrays
-
-    //     // Add initial cumulative sum (0) with frequency 1 to handle cases where sum == k
-    //     map.put(0, 1);
-
-    //     // Traverse through the given array
-    //     for (int num : nums) {
-    //         sum += num; // Add the current element to the cumulative sum
-
-    //         // Check if (sum - k) exists in the map
-    //         if (map.containsKey(sum - k)) {
-    //             count += map.get(sum - k); // Increment count by the frequency of (sum - k)
-    //         }
-
-    //         // Add the current cumulative sum to the map with its frequency
-    //         map.put(sum, map.getOrDefault(sum, 0) + 1);
-    //     }
-
-    //     return count; // Return the count of subarrays
-    
     public static void main(String[] args) {
-        int arr1[] = {1,1,1};
-        int k1=2;
-        int arr2[] = {1,2,3};
-        int k2=3;
+        int arr1[] = {1, 1, 1};
+        int k1 = 2;
+        System.out.println("Output for arr1: " + subarraySum(arr1, k1)); // Expected: 2
 
-        System.out.println(subarraySum(arr1,k1));//output 2
-        System.out.println(subarraySum(arr2,k2));//output 2
+        int arr2[] = {1, 2, 3};
+        int k2 = 3;
+        System.out.println("Output for arr2: " + subarraySum(arr2, k2)); // Expected: 2
+
+        int arr3[] = {1, 2, 3, 4, 5, 6, 7, 8};
+        int k3 = 7;
+        System.out.println("Output for arr3: " + subarraySum(arr3, k3)); // Expected: 3
+
+        int arr4[] = {1, 2, 3, 4, 5};
+        int k4 = 5;
+        System.out.println("Output for arr4: " + subarraySum(arr4, k4)); // Expected: 2
+
+        int arr5[] = {-1, -1, 1, 1};
+        int k5 = 0;
+        System.out.println("Output for arr5: " + subarraySum(arr5, k5)); // Expected: 3
     }
 }
+
