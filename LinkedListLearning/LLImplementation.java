@@ -2,52 +2,55 @@
 
 import java.util.Scanner;
 
-class Node{
+class TreeNode {
     int data;
     Node next;
 
-    Node(int data){
-        this.data=data;
-        this.next=null;
+    TreeNode(int data) {
+        this.data = data;
+        this.next = null;
     }
 }
 
 public class LLImplementation {
     Node head;
+
     LLImplementation() {
         this.head = null;
     }
-    void insertdata(int data){
+
+    void insertdata(int data) {
         Node newnode = new Node(data);
-        
-        if(head == null){
+
+        if (head == null) {
             head = newnode;
-        }
-        else{
+        } else {
             Node temp = head;
-            while (temp.next!=null) {
-                temp=temp.next;
+            while (temp.next != null) {
+                temp = temp.next;
             }
-            temp.next=newnode;
+            temp.next = newnode;
         }
-        
+
     }
-    void delete(int data){
-        if(head==null){
+
+    void delete(int data) {
+        if (head == null) {
             return;
         }
-        if(head.data==data){
-            head=head.next;
+        if (head.data == data) {
+            head = head.next;
             return;
         }
         Node temp = head;
-        while (temp.next !=null && temp.next.data !=data) {
-            temp=temp.next;
+        while (temp.next != null && temp.next.data != data) {
+            temp = temp.next;
         }
-        if(temp.next !=null){
-            temp.next=temp.next.next;
+        if (temp.next != null) {
+            temp.next = temp.next.next;
         }
     }
+
     void display() {
         if (head == null) {
             System.out.println("The list is empty.");
@@ -60,23 +63,26 @@ public class LLImplementation {
         }
         System.out.println();
     }
-    void reverse(){
+
+    void reverse() {
         Node pre = null;
         Node curr = head;
         Node next = null;
-        while(curr!=null){
+        while (curr != null) {
             next = curr.next;
             curr.next = pre;
-            pre= curr;
+            pre = curr;
             curr = next;
         }
         head = pre;
     }
+
     public static void main(String[] args) {
-        Scanner  s = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
         LLImplementation list = new LLImplementation();
         while (true) {
-            System.out.println("Enter 1 to insert data,2 to  Delete a data ,3 to display data,4 to reverse a linked List ,5 to exit:");
+            System.out.println(
+                    "Enter 1 to insert data,2 to  Delete a data ,3 to display data,4 to reverse a linked List ,5 to exit:");
             int choice = s.nextInt();
 
             switch (choice) {

@@ -2,7 +2,7 @@
 
 class Node {
     int data;
-    Node next;
+    TreeNode next;
 
     Node() {
         data = 0;
@@ -10,14 +10,14 @@ class Node {
 
     Node(int d) {
         data = d;
-    }  // Constructor to create a new node
+    } // Constructor to create a new node
 }
 
 class ArrayToLinkedList {
-    static Node head = null;
-    static Node tail = null;
+    static TreeNode head = null;
+    static TreeNode tail = null;
 
-    static Node constructLL(int arr[]) {
+    static TreeNode constructLL(int arr[]) {
         // Reset head and tail for each new linked list construction
         head = null;
         tail = null;
@@ -30,16 +30,16 @@ class ArrayToLinkedList {
     public static void insertdata(int data) {
         // Node newnode = new Node(data);
         // if (head == null) {
-        //     head = newnode;
+        // head = newnode;
         // } else {
-        //     Node temp = head;
-        //     while (temp.next != null) {
-        //         temp = temp.next;
-        //     }
-        //     temp.next = newnode;
+        // Node temp = head;
+        // while (temp.next != null) {
+        // temp = temp.next;
+        // }
+        // temp.next = newnode;
         // }
 
-        Node newnode = new Node(data);
+        TreeNode newnode = new TreeNode(data);
         if (head == null) {
             head = newnode;
             tail = newnode;
@@ -50,14 +50,14 @@ class ArrayToLinkedList {
     }
 
     public static void main(String[] args) {
-        int[] arr = {53, 28, 92, 43, 93, 3, 45, 75, 94, 34, 100, 51, 22, 85, 74, 12, 48, 40}; // Example array
-        Node head = constructLL(arr);
+        int[] arr = { 53, 28, 92, 43, 93, 3, 45, 75, 94, 34, 100, 51, 22, 85, 74, 12, 48, 40 }; // Example array
+        TreeNode head = constructLL(arr);
         printList(head); // Print the constructed linked list
     }
 
     // Utility method to print the linked list
-    public static void printList(Node head) {
-        Node current = head;
+    public static void printList(TreeNode head) {
+        TreeNode current = head;
         while (current != null) {
             System.out.print(current.data + " ");
             current = current.next;
@@ -65,6 +65,3 @@ class ArrayToLinkedList {
         System.out.println();
     }
 }
-
-
-

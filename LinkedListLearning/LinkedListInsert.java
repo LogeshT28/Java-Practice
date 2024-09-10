@@ -2,6 +2,8 @@
 
 import java.util.Scanner;
 
+import prac.LinkedListIn;
+
 class Node{
     int data;
     Node next;
@@ -15,7 +17,7 @@ public class LinkedListInsert {
         LinkedListInsert() {
             this.head=null;
         }
-
+        
      void insertData(int data){
         Node newnode = new Node(data);
         if(head == null){
@@ -56,7 +58,7 @@ public class LinkedListInsert {
     }
   public static void main(String[] args) {
     Scanner s = new Scanner(System.in);
-    LinkedListInsert list =new LinkedListInsert();
+    LinkedListIn list =new LinkedListIn();
         while(true){
             int choice = s.nextInt();
             switch (choice) {
@@ -79,6 +81,11 @@ public class LinkedListInsert {
         }
 
     }
+
+public void add(int data) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'add'");
+}
 
 
 }
